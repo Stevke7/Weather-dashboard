@@ -1,6 +1,17 @@
 import "./current-weather.css";
+import { useEffect } from "react";
 
 const CurrentWeather = ({ data }) => {
+	useEffect(() => {
+		const link =
+			document.querySelector("link[rel*='icon']") ||
+			document.createElement("link");
+		link.type = "image/x-icon";
+		link.rel = "shortcut icon";
+		link.href = `icons/${data.weather[0].icon}.png`;
+		document.getElementsByTagName("head")[0].appendChild(link);
+	}, []);
+
 	return (
 		<div className="weather">
 			<div className="top">

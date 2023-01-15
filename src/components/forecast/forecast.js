@@ -22,7 +22,6 @@ const Forecast = ({ data }) => {
 	const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(
 		WEEK_DAYS.slice(0, dayInAWeek)
 	);
-	console.log("DAYS", forecastDays);
 
 	return (
 		<>

@@ -4,10 +4,15 @@ import "./App.css";
 import CurrentWeather from "./components/current-weather/current-weather";
 import Forecast from "./components/forecast/forecast";
 import Search from "./components/Search.jsx";
+import { useEffect } from "react";
 
 function App() {
 	const [currentWeather, setCurrentWeather] = useState(null);
 	const [forecast, setForecast] = useState(null);
+
+	useEffect(() => {
+		document.title = "Weather Dashboard";
+	}, []);
 
 	const handleOnSearchChange = (searchData) => {
 		const [lat, lon] = searchData.value.split(" ");
@@ -30,8 +35,6 @@ function App() {
 			.catch((err) => console.log(err));
 	};
 
-	console.log("current", currentWeather);
-	console.log("forecast", forecast);
 	return (
 		<div className="container">
 			<Search onSearchChange={handleOnSearchChange} />
