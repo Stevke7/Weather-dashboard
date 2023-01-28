@@ -21,11 +21,13 @@
 	flex: 1 1;
 	font-weight: 600;
 	margin-left: 15px;
+	cursor: pointer;
 }
 .descr {
 	flex: 1 1;
 	margin-right: 15px;
 	text-align: right;
+	cursor: pointer;
 }
 .min-max {
 	color: #757575;
